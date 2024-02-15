@@ -1,1 +1,23 @@
-{ "properties": [ ] }
+{
+  "properties": [
+    {
+      "name": "spring.data.mongodb.client.options.connect-timeout",
+      "type": "java.lang.String",
+      "description": "Description for spring.data.mongodb.client.options.connect-timeout."
+    },
+    {
+      "name": "spring.data.mongodb.client.options.socket-timeout",
+      "type": "java.lang.String",
+      "description": "Description for spring.data.mongodb.client.options.socket-timeout."
+    },
+    {
+      "name": "spring.data.mongodb.client.options.max-connection-idle-time",
+      "type": "java.lang.String",
+      "description": "Description for spring.data.mongodb.client.options.max-connection-idle-time."
+    },
+    {
+      "name": "spring.jpa.packages-to-scan",
+      "type": "java.lang.String",
+      "description": "Description for spring.jpa.packages-to-scan."
+    }
+  ] }

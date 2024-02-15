@@ -1,36 +1,27 @@
 package cat.itacademy.barcelonactiva.rodriguez.jose.s05.t02.n01.model.entity.mongo;
 
-import cat.itacademy.barcelonactiva.rodriguez.jose.s05.t02.n01.model.entity.sql.PlayerSql;
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import java.util.List;
 
-@Entity
+
+@Getter
+@Setter
 @Document(collection = "games")
-public class GameMongo {
-
+public class Game {
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
+    private Long playerId;
 
+    private Integer diceValue1;
 
-    @Getter
-    @Setter
-    private List<Integer> diceValues;
+    private Integer diceValue2;
 
-    @Getter
-    @Setter
-    private boolean won;
+    private Boolean won;
 
-    public GameMongo(String id, List<Integer> diceValues, boolean won) {
-        this.id = id;
-        this.diceValues = diceValues;
-        this.won = won;
-    }
 }
