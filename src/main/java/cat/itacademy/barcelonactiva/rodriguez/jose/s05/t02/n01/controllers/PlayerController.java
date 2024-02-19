@@ -17,7 +17,7 @@ public class PlayerController {
 
     private final PlayerService playerService;
 
-    @PostMapping("/players")
+    @PostMapping("/players") //TODO controlar que solo se produzca un ANONIMOUS como player.
     public ResponseEntity<PlayerDTO> createPlayer(@RequestBody PlayerDTO playerDTO) {
         if (playerDTO.getName().isEmpty()) {
             playerDTO.setName("ANONIMOUS");

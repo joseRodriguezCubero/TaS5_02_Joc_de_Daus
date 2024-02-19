@@ -24,7 +24,7 @@ public class GameMapperImpl implements GameMapper {
         game.setPlayerId(gameDTO.getPlayerId());
         game.setDiceValue1(gameDTO.getDiceValue1());
         game.setDiceValue2(gameDTO.getDiceValue2());
-        game.setWon(gameDTO.getWon());
+        game.setWon(gameDTO.isWin());
         return game;
     }
 

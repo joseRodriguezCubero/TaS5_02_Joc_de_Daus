@@ -104,7 +104,6 @@ public class PlayerServiceImpl implements PlayerService {
     public List<GameDTO> getGamesByPlayerId(Long playerId) {
         try {
             List<Game> games = gameRepository.findByPlayerId(playerId);
-
             List<GameDTO> gameDTOs = games.stream()
                     .map(gameMapper::toDTO)
                     .collect(Collectors.toList());

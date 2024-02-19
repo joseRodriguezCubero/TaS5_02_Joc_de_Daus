@@ -2,19 +2,20 @@ package cat.itacademy.barcelonactiva.rodriguez.jose.s05.t02.n01.model.entity.mon
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-
+@AllArgsConstructor
 @Getter
 @Setter
 @Document(collection = "games")
 public class Game {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String id;
 
     private Long playerId;
 

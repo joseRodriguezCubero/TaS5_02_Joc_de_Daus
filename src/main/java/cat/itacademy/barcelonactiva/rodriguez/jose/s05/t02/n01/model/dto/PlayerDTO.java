@@ -1,11 +1,9 @@
 package cat.itacademy.barcelonactiva.rodriguez.jose.s05.t02.n01.model.dto;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.Date;
-import java.util.List;
 @Getter
 @Setter
 public class PlayerDTO {
@@ -23,5 +21,17 @@ public class PlayerDTO {
         this.name = name;
         this.registrationDate = registrationDate;
         this.avgSuccessRate = avgSuccessRate;
+    }
+
+
+
+    @Override
+    public String toString() {
+        return "PlayerDTO{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", registrationDate=" + registrationDate +
+                ", avgSuccessRate=" + avgSuccessRate +
+                '}';
     }
 }
