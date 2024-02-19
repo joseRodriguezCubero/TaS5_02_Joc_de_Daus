@@ -24,4 +24,14 @@ public class Game {
 
     private Boolean won;
 
+    public Game(Long playerId, Integer diceValue1, Integer diceValue2) {
+        this.playerId = playerId;
+        this.diceValue1 = diceValue1;
+        this.diceValue2 = diceValue2;
+        this.won = diceValue1 + diceValue2 == 7;
+    }
+
+    public Game() {
+
+    }
 }

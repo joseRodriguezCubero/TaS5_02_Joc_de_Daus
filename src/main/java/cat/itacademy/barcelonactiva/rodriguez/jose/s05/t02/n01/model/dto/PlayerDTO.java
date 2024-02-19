@@ -8,16 +8,20 @@ import java.util.Date;
 import java.util.List;
 @Getter
 @Setter
-@NoArgsConstructor
 public class PlayerDTO {
 
     private Long id;
-
     private String name;
-
     private Date registrationDate;
+    private Double avgSuccessRate; // Add this field for `getAllPlayersWithAvgSuccessRate`
 
-    private List<GameDTO> games;
+    public PlayerDTO() {
+    }
 
-    // ... getters and setters
+    public PlayerDTO(Long id, String name, Date registrationDate, Double avgSuccessRate) {
+        this.id = id;
+        this.name = name;
+        this.registrationDate = registrationDate;
+        this.avgSuccessRate = avgSuccessRate;
+    }
 }
