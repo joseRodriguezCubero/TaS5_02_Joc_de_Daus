@@ -11,7 +11,7 @@ public class PlayerDTO {
     private Long id;
     private String name;
     private Date registrationDate;
-    private Double avgSuccessRate; // Add this field for `getAllPlayersWithAvgSuccessRate`
+    private Double avgSuccessRate;
 
     public PlayerDTO() {
     }

@@ -17,14 +17,14 @@ public class PlayerController {
 
     private final PlayerService playerService;
 
-    @PostMapping("/players") //TODO controlar que solo se produzca un ANONIMOUS como player.
+    @PostMapping("/players")
     public ResponseEntity<PlayerDTO> createPlayer(@RequestBody PlayerDTO playerDTO) {
-        if (playerDTO.getName().isEmpty()) {
+        if (playerDTO.getName() == null || playerDTO.getName().isEmpty()) {
             playerDTO.setName("ANONIMOUS");
         }
+
         return new ResponseEntity<>(playerService.createPlayer(playerDTO), HttpStatus.CREATED);
     }
-
     @PutMapping("/players")
     public ResponseEntity<PlayerDTO> updatePlayerName(@RequestParam Long id, @RequestParam String name) {
         return ResponseEntity.ok().body(playerService.updatePlayerName(id, name));

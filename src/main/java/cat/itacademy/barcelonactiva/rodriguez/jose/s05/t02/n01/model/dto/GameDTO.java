@@ -20,9 +20,6 @@ public class GameDTO {
 
     public GameDTO() {
     }
-    public boolean isWin(){
-        return this.won = this.diceValue1 + this.diceValue2 == 7;
-    }
 
 
     @Override

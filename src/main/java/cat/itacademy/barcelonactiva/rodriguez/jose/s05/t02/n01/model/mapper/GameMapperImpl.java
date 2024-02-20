@@ -20,12 +20,7 @@ public class GameMapperImpl implements GameMapper {
 
     @Override
     public Game toEntity(GameDTO gameDTO) {
-        Game game = new Game();
-        game.setPlayerId(gameDTO.getPlayerId());
-        game.setDiceValue1(gameDTO.getDiceValue1());
-        game.setDiceValue2(gameDTO.getDiceValue2());
-        game.setWon(gameDTO.isWin());
-        return game;
+        return new Game(gameDTO.getPlayerId(), gameDTO.getDiceValue1(), gameDTO.getDiceValue2());
     }
 
 }

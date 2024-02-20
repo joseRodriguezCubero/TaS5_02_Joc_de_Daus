@@ -21,14 +21,14 @@ public class PlayerMapperImpl implements PlayerMapper {
     public PlayerDTO toDTO(Player player) {
         PlayerDTO dto = new PlayerDTO();
         dto.setId(player.getId());
-        dto.setName(player.getName());
+        dto.setName(player.getName() != null ? player.getName() : "ANONIMOUS");
         dto.setRegistrationDate(player.getRegistrationDate());
         return dto;
     }
 
     @Override
     public Player toEntity(PlayerDTO playerDTO) {
-        Player player = new Player();  // Constructor con fecha actual
+        Player player = new Player();
         player.setName(playerDTO.getName());
         return player;
     }
