@@ -23,7 +23,14 @@ public class PlayerDTO {
         this.avgSuccessRate = avgSuccessRate;
     }
 
+    public PlayerDTO(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 
+    public PlayerDTO(String name) {
+        this.name = name;
+    }
 
     @Override
     public String toString() {

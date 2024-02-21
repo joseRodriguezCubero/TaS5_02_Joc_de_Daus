@@ -3,6 +3,7 @@ package cat.itacademy.barcelonactiva.rodriguez.jose.s05.t02.n01.model.entity.mon
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
@@ -11,6 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @AllArgsConstructor
 @Getter
 @Setter
+@Builder
 @Document(collection = "games")
 public class Game {
     @Id
