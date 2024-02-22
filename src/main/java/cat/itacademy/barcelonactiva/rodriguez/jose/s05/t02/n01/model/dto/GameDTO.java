@@ -16,7 +16,6 @@ public class GameDTO {
     private Integer diceValue2;
     private Boolean won;
 
-//TODO mirar de no duplicar el campo won, intentar alejarlo de la entidad. Solo en DTO
 
     public GameDTO() {
     }
