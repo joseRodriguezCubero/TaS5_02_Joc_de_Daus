@@ -21,7 +21,7 @@ public class PlayerMapperImpl implements PlayerMapper {
     public PlayerDTO toDTO(Player player) {
         PlayerDTO dto = new PlayerDTO();
         dto.setId(player.getId());
-        dto.setName(player.getName() != null ? player.getName() : "ANONIMOUS");
+        dto.setName(player.getName());
         dto.setRegistrationDate(player.getRegistrationDate());
         return dto;
     }

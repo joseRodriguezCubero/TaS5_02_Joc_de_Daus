@@ -39,11 +39,20 @@ public class PlayerServiceImpl implements PlayerService {
 
     @Override
     public PlayerDTO createPlayer(PlayerDTO playerDTO) {
-        playerRepository.findByNameIgnoreCase(playerDTO.getName())
-                .ifPresent(player -> {
-                    throw new PlayerAlreadyExistException("Already exist player with given name:" + playerDTO.getName());
-                });
+        String playerName = playerDTO.getName();
+        if (playerName == null || playerName.isEmpty()) {
+            playerName = "ANONYMOUS";
+        } else {
+            // Verificar unicidad del nombre solo si no es "Anonymous"
+            if (!playerName.equalsIgnoreCase("ANONYMOUS")) {
+                playerRepository.findByNameIgnoreCase(playerName)
+                        .ifPresent(player -> {
+                            throw new PlayerAlreadyExistException("Already exists player with given name. ");
+                        });
+            }
+        }
         Player player = playerMapper.toEntity(playerDTO);
+        player.setName(playerName); // Asignar el nombre
         playerRepository.save(player);
         return playerMapper.toDTO(player);
     }
@@ -73,6 +82,9 @@ public class PlayerServiceImpl implements PlayerService {
 
     @Override
     public void deleteGames(Long playerId) {
+        if (!playerRepository.existsById(playerId)) {
+            throw new PlayerNotFoundException("Player with ID " + playerId + " not found");
+        }
         try {
             List<Game> games = gameRepository.findByPlayerId(playerId);
             gameRepository.deleteAll(games);

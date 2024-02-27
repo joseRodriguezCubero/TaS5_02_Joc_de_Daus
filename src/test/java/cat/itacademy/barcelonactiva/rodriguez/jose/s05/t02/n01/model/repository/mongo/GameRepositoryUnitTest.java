@@ -1,6 +1,7 @@
 package cat.itacademy.barcelonactiva.rodriguez.jose.s05.t02.n01.model.repository.mongo;
 
 import cat.itacademy.barcelonactiva.rodriguez.jose.s05.t02.n01.model.entity.mongo.Game;
+import cat.itacademy.barcelonactiva.rodriguez.jose.s05.t02.n01.model.repository.mongo.GameRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

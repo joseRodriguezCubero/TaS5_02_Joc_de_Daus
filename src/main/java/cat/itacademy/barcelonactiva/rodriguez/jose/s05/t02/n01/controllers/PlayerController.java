@@ -20,7 +20,7 @@ public class PlayerController {
     @PostMapping("/players")
     public ResponseEntity<PlayerDTO> createPlayer(@RequestBody PlayerDTO playerDTO) {
         if (playerDTO.getName() == null || playerDTO.getName().isEmpty()) {
-            playerDTO.setName("ANONIMOUS");
+            playerDTO.setName(null);
         }
 
         return new ResponseEntity<>(playerService.createPlayer(playerDTO), HttpStatus.CREATED);
