@@ -104,8 +104,10 @@ public class PlayerServiceImpl implements PlayerService {
                     long totalGames = games.size();
                     long wonGames = games.stream().filter(Game::getWon).count();
 
+                    double avgSuccessRate = totalGames > 0 ? (double) wonGames / totalGames * 100 : 0.0;
+
                     PlayerDTO playerDTO = playerMapper.toDTO(player);
-                    playerDTO.setAvgSuccessRate((double) wonGames / totalGames * 100);
+                    playerDTO.setAvgSuccessRate(avgSuccessRate);
 
                     return playerDTO;
                 })
